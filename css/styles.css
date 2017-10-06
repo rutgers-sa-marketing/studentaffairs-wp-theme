@@ -1,0 +1,82 @@
+/*
+  NOTICE: ALL STYLES BELOW ARE MOBILE FIRST.
+  STYLES UNDER MEDIA QUERIES ARE FOR 576px AND UP.
+*/
+
+
+/*FONTS*/
+
+
+
+/*HEADER*/
+header{
+  border-top: 5px solid #ca072d;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.desktop-search{
+  display: none;
+}
+
+
+
+/*SIDEBAR*/
+
+
+
+/*FOOTER*/
+
+
+
+/*ICONS*/
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .fa  { left:  0px;}
+.right-addon .fa { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+
+
+
+
+/*MEDIA QUERIES*/
+/*
+  Extra small devices (portrait phones, less than 576px)
+  No media query since this is the default in Bootstrap
+*/
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { ... }
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .desktop-search{
+    display: inline;
+  }
+
+  .mobile-search{
+    display: none;
+  }
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { ... }
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { ... }
