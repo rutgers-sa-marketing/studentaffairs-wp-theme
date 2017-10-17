@@ -1,5 +1,5 @@
 /*
-  NOTICE: ALL STYLES BELOW ARE MOBILE FIRST.
+  NOTICE: ALL STYLES BELOW ARE MOBILE FIRST(576px AND BELOW).
   STYLES UNDER MEDIA QUERIES ARE FOR 576px AND UP.
 */
 
@@ -8,17 +8,102 @@
 
 
 
+
+/*GLOBAL*/
+body{
+  color: #333;
+}
+
+p{
+  font-size: 16px;
+  line-height: 1.3em;
+}
+
+h1{
+  font-size: 32px;
+  line-height: 1.3em;
+}
+
+h2{
+  font-size: 25px;
+  line-height: 1.3em;
+}
+
+
+
+
 /*HEADER*/
-header{
-  border-top: 5px solid #ca072d;
-  padding-top: 35px;
-  padding-bottom: 35px;
+header {
+    border-top: 5px solid #ca072d;
+    padding-top: 35px;
+    padding-bottom: 15px;
+}
+
+.main-logo {
+    width: 100%;
+    max-width: 255px;
+}
+
+.dep-name {
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: 400;
 }
 
 .desktop-search{
   display: none;
 }
 
+
+
+
+/*NAVIGATION*/
+.bg-dark {
+    background-color: #333333 !important;
+}
+
+.nav-item {
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+.dropdown-item {
+    font-size: 14px;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
+    color: #ffcc00;
+}
+
+.nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+.navbar-dark .navbar-toggler {
+    color: #fff;
+    border-color: #fff;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/*HERO*/
+#hero{
+  
+}
+
+.hero-copy{
+
+}
+
+.hero-copy span{
+  color: #d21034;
+}
 
 
 /*SIDEBAR*/
@@ -61,7 +146,20 @@ header{
 */
 
 /* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) { ... }
+@media (min-width: 576px) {
+  .form-inline .form-control {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+header{
+  border-top: 5px solid #ca072d;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+}
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
@@ -73,10 +171,19 @@ header{
     display: none;
   }
 
+  .dep-name {
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: 400;
+  }
+
 }
 
 /*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) { ... }
+@media (min-width: 992px) {
+}
 
 /*Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { ... }
+@media (min-width: 1200px) {
+
+ }
