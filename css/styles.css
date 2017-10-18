@@ -5,7 +5,7 @@
 
 
 /*FONTS*/
-
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:700');
 
 
 
@@ -44,7 +44,20 @@ header {
     max-width: 255px;
 }
 
+.slogan{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.slogan span{
+  color: #d21034;
+}
+
 .dep-name {
+    font-family: 'Titillium Web', sans-serif;
     font-size: 16px;
     margin-top: 20px;
     font-weight: 400;
@@ -60,6 +73,10 @@ header {
 /*NAVIGATION*/
 .bg-dark {
     background-color: #333333 !important;
+}
+
+.navbar-toggler span {
+    font-size: 16px;
 }
 
 .nav-item {
@@ -92,19 +109,22 @@ header {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+
+
+
 /*HERO*/
-#hero{
-  
+#hero {
+  background: url('../img/hero-img.jpg') no-repeat;
+  background-size: auto auto;
+  background-size: cover;
+  padding: 45px 0;
 }
 
 .hero-copy{
-
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
 }
-
-.hero-copy span{
-  color: #d21034;
-}
-
 
 /*SIDEBAR*/
 
@@ -153,16 +173,16 @@ header {
     vertical-align: middle;
 }
 
-header{
-  border-top: 5px solid #ca072d;
-  padding-top: 45px;
-  padding-bottom: 45px;
-}
-
 }
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
+  header{
+    border-top: 5px solid #ca072d;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
   .desktop-search{
     display: inline;
   }
@@ -181,9 +201,14 @@ header{
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
+  .hero-copy{
+    font-size: 60px;
+  }
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-
- }
+  .hero-copy{
+    font-size: 70px;
+  }
+}
