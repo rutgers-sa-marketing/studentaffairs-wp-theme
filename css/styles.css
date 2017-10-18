@@ -124,6 +124,14 @@ header {
   font-size: 30px;
   font-weight: 800;
   color: #fff;
+  text-shadow: 2px 2px 1px #535353;
+}
+
+.sub-hero {
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 200;
 }
 
 /*SIDEBAR*/
@@ -197,18 +205,19 @@ header {
       font-weight: 400;
   }
 
+  .hero-copy {
+    font-size: 50px;
+    text-shadow: 2px 2px 1px #535353;
+  }
+
 }
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-  .hero-copy{
-    font-size: 60px;
-  }
+
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-  .hero-copy{
-    font-size: 70px;
-  }
+
 }
