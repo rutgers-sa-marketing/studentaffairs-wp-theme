@@ -36,6 +36,13 @@ h3{
   color: #007fac;
 }
 
+h4{
+  font-size: 16px;
+  line-height: 1.3em;
+  color: #ffcc00;
+  text-transform: uppercase;
+}
+
 a{
   color: #CA072D;
   transition: all .30s ease;
@@ -49,17 +56,32 @@ a:hover{
     background: #DCDCDC;
 }
 
-.row{
-  margin-top: 25px;
+.spacer25{
   margin-bottom: 25px;
 }
 
+.spacer35{
+  margin-bottom: 35px;
+}
+
+.spacer50{
+  margin-bottom: 50px;
+}
+
+.row{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 .yellow-box{
-  background: #DFD2B3;
+  background: #E0DABA;
   border-radius: 10px;
-  border: 1px solid #c9bc9e;
   padding: 20px;
   margin-bottom: 25px;
+}
+
+.container-fluid{/*May Need to Remove, We'll See*/
+  max-width: 1440px;
 }
 
 
@@ -68,7 +90,8 @@ a:hover{
 /*HEADER*/
 header {
     border-top: 5px solid #ca072d;
-
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .main-logo {
@@ -170,70 +193,60 @@ header {
 
 
 
+/*MAIN CONTENT*/
+#main{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+
+
+
 /*SIDEBAR*/
 .r-sidebar{
+  background: #F7F7F7;
   border-top: 2px solid #c5c5c5;
-  padding-top: 20px;
+  padding: 20px;
 }
+
 
 
 
 /*TABS*/
 /*---------- tab nav */
-#tab_nav{
-	display: block;
-	width: 100%;
-}
-#tab_nav ul{
-	display: table;
-	margin: 0px;
+ul.tabs{
+  margin: 0px;
 	padding: 0px;
 	list-style: none;
-	overflow: hidden;
-	/*width: 100%; /* <---------- Remove this property to make the width of the tabs normal*/
 }
-#tab_nav li{
-	display: table-cell;
-	text-align: center;
-	padding: 0;
+
+ul.tabs li{
+	background: #dbdbdb;
+	color: #333;
+	display: inline-block;
+	padding: 20px 35px;
+	cursor: pointer;
+  font-weight: bold;
+  transition: all .30s ease;
 }
-#tab_nav li a{
-	display: block;
-	font-weight: bold;
-	color: #555;
-	text-decoration: none;
-	padding: 20px;
-	background: #ccc;
-	/*Rounded Corners*/
-	border-radius: 5px 5px 0 0;
-	-webkit-border-radius: 5px 5px 0 0;
-    -moz-border-radius: 5px 5px 0 0;
-	border: 1px solid #ccc;
-  border-bottom: 0;
-	/*Gradient*/
-	background: -webkit-linear-gradient(top, #f1f1f1, #f5f5f5);
-	background: -webkit-linear-gradient(top, #f1f1f1, #f5f5f5);
-	background: -ms-linear-gradient(top, #f1f1f1, #f5f5f5);
-  background: -o-linear-gradient(top, #f1f1f1, #f5f5f5);
+
+ul.tabs li:hover{
+  background: #e6e6e6;
 }
-#tab_nav li a.selected{
-	background: #fff;
-	color: #000;
+
+ul.tabs li.current{
+	background: #F7F7F7;
+	color: #CA072D;
 }
-#tab_nav div{
+
+.tab-content{
 	display: none;
-	margin: 0px;
-	padding: 20px;
-	color: #555;
-	background: #fff;
-  border: 1px solid #ccc;
-	box-shadow: 2px 1px 1px 0px #dddddd;
+	background: #F7F7F7;
+	padding: 25px;
 }
-#tab_nav div.selected{
-	display: block;
-}
-#tab_nav div p{
-	margin: 0px 0px 20px 0px;
+
+.tab-content.current{
+	display: inherit;
 }
 
 
@@ -241,10 +254,59 @@ header {
 
 /*FOOTER*/
 footer{
-  background: #DFD2B3;
-  border-top: 1px solid ;
+  background: #444444;
 }
 
+footer ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+footer li{
+  margin-bottom: 10px;
+}
+
+footer li::after {
+    color: #ffffff;
+    content: ">>";
+    font-size: 0.7em;
+    margin-left: 6px;
+    vertical-align: 1px;
+}
+
+footer a{
+  color: #fff;
+  font-size: 14px;
+}
+
+footer a:hover{
+  color: #fff;
+  text-decoration: underline;
+}
+
+.university-links{
+  list-style-type: none;
+  padding: 0;
+}
+
+.university-links li{
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.bottom-bar{
+  background: #000000;
+  color: #fff;
+  font-size: 12px;
+}
+
+.bottom-bar a{
+  color: #ffcc00;
+}
+
+.copyright{
+  font-size: 12px;
+}
 
 /*ICONS*/
 /* enable absolute positioning */
@@ -287,10 +349,6 @@ footer{
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-  header{
-    border-top: 5px solid #ca072d;
-  }
-
   .desktop-search{
     display: inline;
   }
@@ -310,18 +368,20 @@ footer{
     text-shadow: 2px 2px 1px #535353;
   }
 
-  .r-sidebar{
-    background: #F7F7F7;
-    padding: 20px;
-  }
 }
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-  .row{
-    margin-top: 45px;
-    margin-bottom: 45px;
+  header {
+      padding-top: 45px;
+      padding-bottom: 45px;
   }
+
+  #main{
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
