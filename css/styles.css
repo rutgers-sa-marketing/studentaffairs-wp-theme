@@ -27,6 +27,39 @@ h1{
 h2{
   font-size: 25px;
   line-height: 1.3em;
+  color: #CA072D;
+}
+
+h3{
+  font-size: 20px;
+  line-height: 1.3em;
+  color: #007fac;
+}
+
+a{
+  color: #CA072D;
+  transition: all .30s ease;
+}
+
+a:hover{
+  color: #87061f;
+}
+
+.dropdown-item:hover{
+    background: #DCDCDC;
+}
+
+.row{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.yellow-box{
+  background: #DFD2B3;
+  border-radius: 10px;
+  border: 1px solid #c9bc9e;
+  padding: 20px;
+  margin-bottom: 25px;
 }
 
 
@@ -35,8 +68,7 @@ h2{
 /*HEADER*/
 header {
     border-top: 5px solid #ca072d;
-    padding-top: 35px;
-    padding-bottom: 15px;
+
 }
 
 .main-logo {
@@ -103,6 +135,7 @@ header {
 .navbar-dark .navbar-toggler {
     color: #fff;
     border-color: #fff;
+    cursor: pointer;
 }
 
 .navbar-dark .navbar-toggler-icon {
@@ -128,18 +161,89 @@ header {
 }
 
 .sub-hero {
-    color: #fff;
-    font-size: 25px;
-    letter-spacing: 1px;
-    font-weight: 200;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-weight: 200;
 }
 
+
+
+
 /*SIDEBAR*/
+.r-sidebar{
+  border-top: 2px solid #c5c5c5;
+  padding-top: 20px;
+}
+
+
+
+/*TABS*/
+/*---------- tab nav */
+#tab_nav{
+	display: block;
+	width: 100%;
+}
+#tab_nav ul{
+	display: table;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	overflow: hidden;
+	/*width: 100%; /* <---------- Remove this property to make the width of the tabs normal*/
+}
+#tab_nav li{
+	display: table-cell;
+	text-align: center;
+	padding: 0;
+}
+#tab_nav li a{
+	display: block;
+	font-weight: bold;
+	color: #555;
+	text-decoration: none;
+	padding: 20px;
+	background: #ccc;
+	/*Rounded Corners*/
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+	border: 1px solid #ccc;
+  border-bottom: 0;
+	/*Gradient*/
+	background: -webkit-linear-gradient(top, #f1f1f1, #f5f5f5);
+	background: -webkit-linear-gradient(top, #f1f1f1, #f5f5f5);
+	background: -ms-linear-gradient(top, #f1f1f1, #f5f5f5);
+  background: -o-linear-gradient(top, #f1f1f1, #f5f5f5);
+}
+#tab_nav li a.selected{
+	background: #fff;
+	color: #000;
+}
+#tab_nav div{
+	display: none;
+	margin: 0px;
+	padding: 20px;
+	color: #555;
+	background: #fff;
+  border: 1px solid #ccc;
+	box-shadow: 2px 1px 1px 0px #dddddd;
+}
+#tab_nav div.selected{
+	display: block;
+}
+#tab_nav div p{
+	margin: 0px 0px 20px 0px;
+}
+
 
 
 
 /*FOOTER*/
-
+footer{
+  background: #DFD2B3;
+  border-top: 1px solid ;
+}
 
 
 /*ICONS*/
@@ -166,7 +270,6 @@ header {
 
 
 
-
 /*MEDIA QUERIES*/
 /*
   Extra small devices (portrait phones, less than 576px)
@@ -179,16 +282,13 @@ header {
     display: inline-block;
     width: 100%;
     vertical-align: middle;
-}
-
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
   header{
     border-top: 5px solid #ca072d;
-    padding-top: 45px;
-    padding-bottom: 45px;
   }
 
   .desktop-search{
@@ -200,9 +300,9 @@ header {
   }
 
   .dep-name {
-      font-size: 20px;
-      margin-top: 20px;
-      font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 400;
   }
 
   .hero-copy {
@@ -210,11 +310,18 @@ header {
     text-shadow: 2px 2px 1px #535353;
   }
 
+  .r-sidebar{
+    background: #F7F7F7;
+    padding: 20px;
+  }
 }
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-
+  .row{
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
