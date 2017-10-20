@@ -13,7 +13,7 @@
 
 <!-- HEADER -->
     <header>
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-lg-3">
             <a href="#" title="Rutgers University - Division of Student Affairs"><img src="img/main-logo.png" class="main-logo" alt="Rutgers University - Division of Student Affairs"></a>
@@ -39,7 +39,7 @@
 
 <!-- NAVIGATION -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+        <div class="container-fluid">
 
               <a class="navbar-brand" href="#"></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,82 +106,67 @@
 <!-- NAVIGATION -->
 
     <section id="hero">
-      <div class="container">
+      <div class="container-fluid">
         <p class="hero-copy">Center for Latino Arts &amp; Culture</p>
-        <!--<p class="sub-hero">Meet the Staff</p>-->
+        <p class="sub-hero">About Us</p>
 
       </div><!-- container -->
     </section>
 
-    <div class="container">
+    <div class="container-fluid" id="main">
       <div class="row">
+        <!-- MAIN CONTENT-->
         <div class="col-lg-8">
           <h1>Main Content</h1>
-          <p><iframe style="float:left; padding: 0 20px 10px 0;" width="300" height="auto" src="https://www.youtube.com/embed/-56BC55EW4c?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat sed lectus vestibulum. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Tellus id interdum velit laoreet id. Nisl tincidunt eget nullam non nisi est sit amet facilisis. In cursus turpis massa tincidunt dui ut ornare lectus sit.</p>
+          <p><iframe style="float:left; padding: 0 20px 10px 0;" src="https://www.youtube.com/embed/-56BC55EW4c?rel=0&amp;showinfo=0" frameborder="0" width="300" allowfullscreen></iframe>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat sed lectus vestibulum. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Tellus id interdum velit laoreet id. Nisl tincidunt eget nullam non nisi est sit amet facilisis. In cursus turpis massa tincidunt dui ut ornare lectus sit.</p>
 
           <p>Massa vitae tortor condimentum lacinia quis vel eros donec. Nunc mattis enim ut tellus elementum sagittis vitae. Id porta nibh venenatis cras sed felis. Tortor vitae purus faucibus ornare.</p>
 
           <p>Ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Ligula ullamcorper malesuada proin libero nunc consequat interdum. Rhoncus dolor purus non enim praesent elementum. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Leo urna molestie at elementum eu facilisis sed.</p>
 
+          <!-- 50px Bottom Margin --><div class="spacer50"></div><!-- 50px Bottom Margin -->
 
-          <div id="tab_nav">
-      			<ul>
-      				<li><a href="index.html">Tab One</a></li>
-      				<li class="selected"><a href="index.html">Tab Two</a></li>
-      			</ul>
+          <ul class="tabs">
+          	<li class="tab-link current" data-tab="tab-1">Tab One</li>
+          	<li class="tab-link" data-tab="tab-2">Tab Two</li>
+          </ul>
+
+          <div id="tab-1" class="tab-content current">
+            <h2>Headline</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div><!-- tab-content -->
+          <div id="tab-2" class="tab-content">
+            <h2>Headline 2</h2>
+          	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div><!-- tab-content -->
+          <!-- 50px Bottom Margin --><div class="spacer50"></div><!-- 50px Bottom Margin -->
+
+          <h1>Header 1</h1>
+          <h2>Header 2</h2>
+          <h3>Header 3</h3>
+          <h4>Header 4 (Used primarily for the footer)</h4>
+          <p>Massa vitae tortor condimentum lacinia quis vel eros donec. Nunc mattis enim ut tellus elementum sagittis vitae. Id porta nibh venenatis cras sed felis. Tortor vitae purus faucibus ornare.</p>
+          <a href="#">General Links</a>
 
 
-      			<div>
-      				<h2>Tab Content One</h2>
-      				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-      				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      			</div>
-
-      			<div>
-      				<h2>Tab Content Two</h2>
-      				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      			</div>
-		      </div><!-- tab -->
         </div><!-- col -->
 
+        <!-- SIDEBAR -->
         <div class="col-lg-4">
           <div class="r-sidebar">
 
             <h2>Upcoming Events</h2>
 
-              <ul>
-                <p><strong>Homecoming Week!</strong><br>
-                October 16 - October 21</p>
-                <p><strong>RUPA Presents: Poppin’</strong><br>
-                October 23 @ 1:00 pm - 3:00 pm</p>
-                <p><strong>Big Chill 5K Registration Begins</strong><br>
-                November 1</p>
-                <a href="#">View All Events </a>
-              </ul>
-
+            <ul>
+              <p><strong>Homecoming Week!</strong><br>
+                  October 16 - October 21</p>
+              <p><strong>RUPA Presents: Poppin’</strong><br>
+                  October 23 @ 1:00 pm - 3:00 pm</p>
+              <p><strong>Big Chill 5K Registration Begins</strong><br>
+                  November 1</p>
+              <a href="#">View All Events </a>
+            </ul>
 
             <div  class="yellow-box">
               <h3>Heading 3</h3>
@@ -198,6 +183,73 @@
         </div><!-- col -->
       </div><!-- row -->
     </div><!-- container -->
+
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <h4>Department Contact</h4>
+            <ul>
+              <li><a href="#" title="Something">Link to Something</a></li>
+              <li><a href="#" title="Something">Link to Someplace</a></li>
+              <li><a href="#" title="Something">Link to Nowhere</a></li>
+              <li><a href="#" title="Something">Link to Space</a></li>
+              <li><a href="#" title="Something">Link to Life</a></li>
+            </ul>
+          </div><!-- col -->
+
+          <div class="col-sm-6 col-md-3">
+            <h4>Helpful Resources</h4>
+            <ul>
+              <li><a href="#" title="Something">Link to Something</a></li>
+              <li><a href="#" title="Something">Link to Someplace</a></li>
+              <li><a href="#" title="Something">Link to Nowhere</a></li>
+              <li><a href="#" title="Something">Link to Space</a></li>
+              <li><a href="#" title="Something">Link to Life</a></li>
+            </ul>
+          </div><!-- col -->
+
+          <div class="col-sm-6 col-md-3">
+            <h4>Departamental Information</h4>
+            <ul>
+              <li><a href="#" title="Something">Link to Something</a></li>
+              <li><a href="#" title="Something">Link to Someplace</a></li>
+              <li><a href="#" title="Something">Link to Nowhere</a></li>
+              <li><a href="#" title="Something">Link to Space</a></li>
+              <li><a href="#" title="Something">Link to Life</a></li>
+            </ul>
+          </div><!-- col -->
+
+          <div class="col-sm-6 col-md-3">
+            <h4>Divisional Campaigns</h4>
+            <ul>
+              <li><a href="#" title="Something">Link to Something</a></li>
+              <li><a href="#" title="Something">Link to Someplace</a></li>
+              <li><a href="#" title="Something">Link to Nowhere</a></li>
+              <li><a href="#" title="Something">Link to Space</a></li>
+              <li><a href="#" title="Something">Link to Life</a></li>
+            </ul>
+          </div><!-- col -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </footer><!-- footer -->
+
+
+    <div class="bottom-bar">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8">
+            <p class="copyright">Copyright © 2017, <a href="http://www.rutgers.edu" title="Rutgers University" target="_blank">Rutgers, The State University of New Jersey</a>, an equal opportunity, affirmative action institution. All rights reserved.</p>
+          </div><!-- col -->
+
+          <div class="col-md-4">
+            <ul class="university-links">
+            <li><a href="http://nb.rutgers.edu/" title="Rutgers University–New Brunswick" target="_blank">Rutgers University–New Brunswick</a></li>
+            <li><a href="http://search.rutgers.edu/" title="Search Rutgers" target="_blank">Search Rutgers</a></li>
+          </div><!-- col -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- bottom-bar -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
