@@ -255,6 +255,14 @@ ul.tabs li.current{
     margin-bottom: 3px;
 }
 
+.accordion-title{
+  display: block;
+  padding: 15px;
+}
+
+.card-header {
+    padding: 0 !important;
+}
 
 
 /*FOOTER*/
