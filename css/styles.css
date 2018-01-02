@@ -80,10 +80,10 @@ a:hover{
   margin-bottom: 25px;
 }
 
-.container-fluid{/*May Need to Remove, We'll See*/
-  max-width: 1440px;
+img{
+  max-width: 100%;
+  height: auto;
 }
-
 
 
 
@@ -170,7 +170,7 @@ header {
 
 /*HERO*/
 #hero {
-  background: url('../img/hero-img.jpg') no-repeat;
+  background: url('../images/hero-img.jpg') no-repeat;
   background-size: auto auto;
   background-size: cover;
   padding: 45px 0;
@@ -193,6 +193,26 @@ header {
 
 
 
+/*POSTS*/
+.post{
+  background: #F7F7F7;
+  border: 3px solid #F0F0F0;
+  padding: 10px;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.post img{
+  float: left;
+  margin: 0 15px 15px 0;
+}
+
+.post-meta{
+  font-size: 12px;
+}
+
+
+
 /*MAIN CONTENT*/
 #main{
   padding-top: 25px;
@@ -208,7 +228,9 @@ header {
   padding: 20px;
 }
 
-
+.widget{
+  list-style-type: none;
+}
 
 
 /*TABS*/
@@ -385,11 +407,6 @@ footer a:hover{
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-  .container-fluid {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-
   header {
     padding-top: 25px;
     padding-bottom: 25px;
