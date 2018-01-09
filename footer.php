@@ -1,5 +1,3 @@
-<?php get_sidebar(); ?>
-
 </div><!-- row -->
 </div><!-- container -->
 
@@ -58,7 +56,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <p class="copyright">Copyright © 2017, <a href="http://www.rutgers.edu" title="Rutgers University" target="_blank">Rutgers, The State University of New Jersey</a>, an equal opportunity, affirmative action institution. All rights reserved.</p>
+      <p class="copyright">Copyright &copy;<? echo date(Y);?>, <a href="http://www.rutgers.edu" title="Rutgers University" target="_blank">Rutgers, The State University of New Jersey</a>, an equal opportunity, affirmative action institution. All rights reserved.</p>
     </div><!-- col -->
 
     <div class="col-md-4">
@@ -79,7 +77,8 @@
 <script src="https://use.fontawesome.com/a7b310d9ee.js"></script>
 
 <!-- Custom Scripts -->
-<script src="js/script.js"></script>
+<script src="<?php bloginfo(template_directory); ?>/js/script.js"></script>
 
+<?php wp_footer(); ?>
 </body>
 </html>

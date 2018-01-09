@@ -11,6 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php bloginfo(template_directory); ?>/css/styles.css">
+    <?php wp_head(); ?>
   </head>
   <body<?php body_class(); ?>>
 
@@ -19,7 +20,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <a href="#" title="Rutgers University - Division of Student Affairs"><img src="<?php bloginfo(template_directory); ?>/images/main-logo.png" class="main-logo" alt="Rutgers University - Division of Student Affairs"></a>
+            <a href="<?php echo get_home_url(); ?>" title="Rutgers University - Division of Student Affairs"><img src="<?php bloginfo(template_directory); ?>/images/main-logo.png" class="main-logo" alt="Rutgers University - Division of Student Affairs"></a>
           </div><!-- col -->
 
           <div class="col-lg-4">
@@ -119,15 +120,3 @@
         </div><!-- contianer -->
       </nav>
 <!-- NAVIGATION -->
-
-    <section id="hero">
-      <div class="container">
-        <h1 class="hero-copy">Center for Latino Arts &amp; Culture</h1>
-
-        <h2 class="sub-hero">About Us</h2>
-
-      </div><!-- container -->
-    </section>
-
-    <div class="container" id="main">
-      <div class="row">

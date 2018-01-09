@@ -230,6 +230,18 @@ header {
 
 .widget{
   list-style-type: none;
+  margin-bottom: 20px;
+}
+
+
+
+/* SEARCH RESULTS PAGE*/
+.search-results{
+    font-size: 18px;
+    line-height: 1.3em;
+    color: #939393;
+    font-weight: normal;
+    padding-bottom: 10px;
 }
 
 
@@ -401,6 +413,10 @@ footer a:hover{
   .hero-copy {
     font-size: 50px;
     text-shadow: 2px 2px 1px #535353;
+  }
+
+  .search-results{
+      font-size: 30px;
   }
 
 }
