@@ -14,6 +14,7 @@ register_sidebar(array(
 UNCOMMENT THIS FUNCTION TO ENABLE LEFT SIDEBAR OPTION
 */
 
+
 //Registering the Right Sidebar
 register_sidebar(array(
   'name'          => __( 'Right Sidebar'),
@@ -24,6 +25,7 @@ register_sidebar(array(
 	'before_title'  => '<h3>',
 	'after_title'   => '</h3>'
 ));
+
 
 // Register Custom Navigation Walker
 require_once('class-wp-bootstrap-navwalker.php');
