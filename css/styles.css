@@ -4,11 +4,6 @@
 */
 
 
-/*FONTS*/
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:700');
-
-
-
 /*GLOBAL*/
 body{
   color: #333;
@@ -95,8 +90,10 @@ header {
 }
 
 .main-logo {
-    width: 100%;
-    max-width: 255px;
+  width: 100%;
+  max-width: 255px;
+  display: block;
+  margin: 0 auto;
 }
 
 .slogan{
@@ -112,10 +109,9 @@ header {
 }
 
 .dep-name {
-    font-family: 'Titillium Web', sans-serif;
     font-size: 16px;
-    margin-top: 20px;
-    font-weight: 400;
+    margin-top: 21px;
+    text-align: center;
 }
 
 .desktop-search{
@@ -404,12 +400,6 @@ footer a:hover{
     display: none;
   }
 
-  .dep-name {
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: 400;
-  }
-
   .hero-copy {
     font-size: 50px;
     text-shadow: 2px 2px 1px #535353;
@@ -431,6 +421,10 @@ footer a:hover{
   #main{
     padding-top: 45px;
     padding-bottom: 45px;
+  }
+
+  .dep-name {
+    text-align: left;
   }
 
 }

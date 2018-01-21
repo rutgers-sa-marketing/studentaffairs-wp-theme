@@ -14,7 +14,15 @@
   <div class="row">
 
     <div class="col-lg-9">
-      <?php the_content(); ?>
+
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        <?php the_content(); ?>
+
+      <?php endwhile; else : ?>
+  	     <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+       <?php endif; ?>
+
     </div><!-- col -->
 
 <?php get_sidebar('right'); ?>

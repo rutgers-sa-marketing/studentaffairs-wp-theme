@@ -20,12 +20,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <a href="<?php echo get_home_url(); ?>" title="Rutgers University - Division of Student Affairs"><img src="<?php bloginfo(template_directory); ?>/images/main-logo.png" class="main-logo" alt="Rutgers University - Division of Student Affairs"></a>
+            <a href="<?php echo get_home_url(); ?>" title="Rutgers University - Division of Student Affairs"><img src="<?php bloginfo(template_directory); ?>/images/sarutgers-logo-scarlet.png" class="main-logo" alt="Rutgers University - Division of Student Affairs"></a>
           </div><!-- col -->
 
           <div class="col-lg-4">
-            <p class="slogan">There's a <span>U</span> in R<span>u</span>tgers</p>
-            <!--<h2 class="dep-name">The Center for Social Justice Education and LGBT Communities</h2>-->
+            <h1 class="dep-name"><?php bloginfo( 'name' ); ?></h1>
           </div><!-- col -->
 
           <div class="col-lg-3 ml-auto">
