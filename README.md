@@ -10,7 +10,7 @@ Wordpress theme files for Rutgers Student Affairs. Theme is built under the Boot
 - Full-width, Right sidebar and Front page templates
 
 
-### Features to come
+## Features to come
 - Conference specific layout templates
 - Blog specific layout templates
 - Custom "Meet the staff" post type with filtering options
