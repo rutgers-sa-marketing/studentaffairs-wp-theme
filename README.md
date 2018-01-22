@@ -2,5 +2,7 @@
 Wordpress theme files for Rutgers Student Affairs. Theme is built with the Bootstrap framework.
 
 
-### Update – 1/18/2018
-Transferred the repository from a personal account to the department repository.
+### Features
+- Fully responsive and mobile friendly
+- Built with the <a href="getbootstrap.com" target="_blank">Bootstrap 4</a> framework
+- Includes the <a href="fontawesome.io">Font Awesome</a> Library
