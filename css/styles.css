@@ -4,11 +4,6 @@
 */
 
 
-/*FONTS*/
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:700');
-
-
-
 /*GLOBAL*/
 body{
   color: #333;
@@ -73,6 +68,11 @@ a:hover{
   padding-bottom: 25px;
 }
 
+.header-row{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .yellow-box{
   background: #E0DABA;
   border-radius: 10px;
@@ -89,14 +89,14 @@ img{
 
 /*HEADER*/
 header {
-    border-top: 5px solid #ca072d;
-    padding-top: 15px;
-    padding-bottom: 15px;
+  border-top: 5px solid #ca072d;
 }
 
 .main-logo {
-    width: 100%;
-    max-width: 255px;
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
 }
 
 .slogan{
@@ -112,16 +112,15 @@ header {
 }
 
 .dep-name {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 16px;
-    margin-top: 20px;
-    font-weight: 400;
+    font-size: 14px;
+    margin-top: 12px;
+    text-align: center;
+    color: #d8444b;
 }
 
 .desktop-search{
-  display: none;
+  display: inline;
 }
-
 
 
 
@@ -163,6 +162,10 @@ header {
 
 .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar {
+    padding: .5rem 1rem;
 }
 
 
@@ -233,6 +236,12 @@ header {
   margin-bottom: 20px;
 }
 
+#wp-calendar {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 330px;
+    font-size: 14px;
+}
 
 
 /* SEARCH RESULTS PAGE*/
@@ -396,20 +405,6 @@ footer a:hover{
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-  .desktop-search{
-    display: inline;
-  }
-
-  .mobile-search{
-    display: none;
-  }
-
-  .dep-name {
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: 400;
-  }
-
   .hero-copy {
     font-size: 50px;
     text-shadow: 2px 2px 1px #535353;
@@ -423,14 +418,17 @@ footer a:hover{
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-  header {
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-
   #main{
     padding-top: 45px;
     padding-bottom: 45px;
+  }
+
+  .dep-name {
+    text-align: left;
+  }
+
+  .navbar {
+      padding: 0rem 1rem;
   }
 
 }

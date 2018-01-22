@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php bloginfo(template_directory); ?>/css/styles.css">
     <?php wp_head(); ?>
   </head>
@@ -18,23 +18,17 @@
 <!-- HEADER -->
     <header>
       <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <a href="<?php echo get_home_url(); ?>" title="Rutgers University - Division of Student Affairs"><img src="<?php bloginfo(template_directory); ?>/images/main-logo.png" class="main-logo" alt="Rutgers University - Division of Student Affairs"></a>
+        <div class="row header-row">
+          <div class="col-lg-2">
+            <a href="<?php echo get_home_url(); ?>" title="Rutgers University - Division of Student Affairs"><img src="<?php bloginfo(template_directory); ?>/images/sarutgers-logo-scarlet.png" class="main-logo mx-auto d-block" alt="Rutgers University - Division of Student Affairs"></a>
           </div><!-- col -->
 
           <div class="col-lg-4">
-            <p class="slogan">There's a <span>U</span> in R<span>u</span>tgers</p>
-            <!--<h2 class="dep-name">The Center for Social Justice Education and LGBT Communities</h2>-->
+            <h1 class="dep-name"><?php bloginfo( 'name' ); ?></h1>
           </div><!-- col -->
 
           <div class="col-lg-3 ml-auto">
-            <form class="form-inline my-2 my-lg-0 desktop-search">
-              <div class="inner-addon right-addon">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="text" class="form-control" placeholder="Search" />
-              </div>
-            </form><!-- Search Field for Desktop -->
+            <?php get_search_form(); ?><!-- Search Field for Desktop -->
           </div><!-- col -->
         </div><!-- row -->
       </div><!-- container-->
@@ -107,13 +101,6 @@
                     <a class="nav-link" href="#">Events</a>
                   </li>
                 </ul> Main Nav -->
-
-                <form class="form-inline my-2 my-lg-0 mobile-search">
-                  <div class="inner-addon right-addon">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    <input type="text" class="form-control" placeholder="Search" />
-                  </div>
-                </form> <!-- Search Field for Mobile-->
 
               </div> <!-- Collapse -->
 

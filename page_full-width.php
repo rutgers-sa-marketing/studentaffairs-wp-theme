@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
 * Template Name: Full Width Template
-**/ 
+**/
 
 
 get_header(); ?>
@@ -21,13 +21,14 @@ get_header(); ?>
 
     <div class="col-lg-12">
 
-    	<?php while ( have_posts() ) : the_post(); ?>
-      	<?php get_template_part( 'content', 'page' ); ?>
-      	
-      	<?php the_content(); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-      <?php endwhile; //end of the loop. ?>
-    	
+        <?php the_content(); ?>
+
+        <?php endwhile; else : ?>
+  	       <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+      <?php endif; ?>
+
     </div><!-- col -->
 
 <?php get_footer(); ?>
