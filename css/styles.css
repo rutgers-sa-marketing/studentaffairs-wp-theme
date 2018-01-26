@@ -311,6 +311,7 @@ ul.tabs li.current{
 /*FOOTER*/
 footer{
   background: #444444;
+  color: #FFF;
 }
 
 footer ul{
@@ -338,6 +339,18 @@ footer a{
 footer a:hover{
   color: #fff;
   text-decoration: underline;
+}
+
+footer .calendar_wrap a{
+  color: #d21034;
+}
+
+footer .widget .post-date, footer caption{
+  color: #F0EDE9;
+}
+
+.calendar_wrap caption{
+  caption-side: top;
 }
 
 .university-links{

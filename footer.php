@@ -5,47 +5,27 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-md-3">
-      <h4>Department Contact</h4>
-      <ul>
-        <li><a href="#" title="Something">Link to Something</a></li>
-        <li><a href="#" title="Something">Link to Someplace</a></li>
-        <li><a href="#" title="Something">Link to Nowhere</a></li>
-        <li><a href="#" title="Something">Link to Space</a></li>
-        <li><a href="#" title="Something">Link to Life</a></li>
-      </ul>
+      <?php if ( ! dynamic_sidebar( 'Footer Column 1' ) ) : ?>
+
+      <?php endif; ?>
     </div><!-- col -->
 
     <div class="col-sm-6 col-md-3">
-      <h4>Helpful Resources</h4>
-      <ul>
-        <li><a href="#" title="Something">Link to Something</a></li>
-        <li><a href="#" title="Something">Link to Someplace</a></li>
-        <li><a href="#" title="Something">Link to Nowhere</a></li>
-        <li><a href="#" title="Something">Link to Space</a></li>
-        <li><a href="#" title="Something">Link to Life</a></li>
-      </ul>
+      <?php if ( ! dynamic_sidebar( 'Footer Column 2' ) ) : ?>
+
+      <?php endif; ?>
     </div><!-- col -->
 
     <div class="col-sm-6 col-md-3">
-      <h4>Departamental Information</h4>
-      <ul>
-        <li><a href="#" title="Something">Link to Something</a></li>
-        <li><a href="#" title="Something">Link to Someplace</a></li>
-        <li><a href="#" title="Something">Link to Nowhere</a></li>
-        <li><a href="#" title="Something">Link to Space</a></li>
-        <li><a href="#" title="Something">Link to Life</a></li>
-      </ul>
+      <?php if ( ! dynamic_sidebar( 'Footer Column 3' ) ) : ?>
+
+      <?php endif; ?>
     </div><!-- col -->
 
     <div class="col-sm-6 col-md-3">
-      <h4>Divisional Campaigns</h4>
-      <ul>
-        <li><a href="#" title="Something">Link to Something</a></li>
-        <li><a href="#" title="Something">Link to Someplace</a></li>
-        <li><a href="#" title="Something">Link to Nowhere</a></li>
-        <li><a href="#" title="Something">Link to Space</a></li>
-        <li><a href="#" title="Something">Link to Life</a></li>
-      </ul>
+      <?php if ( ! dynamic_sidebar( 'Footer Column 4' ) ) : ?>
+
+      <?php endif; ?>
     </div><!-- col -->
   </div><!-- row -->
 </div><!-- container -->
