@@ -3,15 +3,15 @@
  * Basic way to add new meta box to the page screen
  */
  // https://code.tutsplus.com/tutorials/how-to-create-custom-wordpress-writemeta-boxes--wp-20336 
-add_action( 'add_meta_boxes', 'wpse44966_add_meta_box' );
+add_action( 'add_meta_boxes', 'add_custom_menu_meta_box' );
 
  
-function wpse44966_add_meta_box()
+function add_custom_menu_meta_box()
 {
     add_meta_box(
-        'wpse44966-meta-box', // id, used as the html id att
-        __( 'WPSE 44966 Meta Box' ), // meta box title, like "Page Attributes"
-        'wpse44966_meta_box_cb', // callback function, spits out the content
+        'sa-menu-meta-box', // id, used as the html id att
+        __( 'Sidebar Menu' ), // meta box title, like "Page Attributes"
+        'generateSidebarMenus', // callback function, spits out the content
         'page', // post type or page. We'll add this to pages only
         'side', // context (where on the screen
         'low' // priority, where should this go in the context?
@@ -19,8 +19,9 @@ function wpse44966_add_meta_box()
 }
 
 //Callback function for our meta box.  Echos out the content
-function wpse44966_meta_box_cb( $post )
+function generateSidebarMenus( $post )
 {
+	/*Took the following code straight from admin/nav-menus.php*/
 	$menus = get_terms('nav_menu');
 	echo("<script>console.log('PHP found these menus: ".json_encode($menus)."');</script>");
 	$nav_menus = wp_get_nav_menus();
