@@ -98,7 +98,7 @@
 	    global $post;
 	    $values = get_post_custom( $post->ID );
 	    $text = isset( $values['my_meta_box_text'] ) ? $values['my_meta_box_text'] : '';
-	    $selected = isset( $values['my_meta_box_select'] ) ? esc_attr( $values['my_meta_box_select'] ) : '';
+	    $selected = isset( $values['my_meta_box_select'] ) ? esc_attr( $values['my_meta_box_select'] ) : 'NO_VALUE_SET';
 	    wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
 
 		/*
@@ -130,41 +130,45 @@
 		  $menu_locations = get_nav_menu_locations();
 		}
 		?>
-		<select name="my_meta_box_select" id="my_meta_box_select">
-		<?php foreach ( (array) $nav_menus as $_nav_menu ) : ?>
-		  <option value="<?php echo esc_attr( $_nav_menu->term_id ); ?>" <?php selected($selected, $_nav_menu->term_id); ?>>
-		    <?php
-		    echo esc_html( $_nav_menu->truncated_name ) ;
+		<p>Sidebar Menu:</p>
+		<select name="my_meta_box_select" id="my_meta_box_select" value="<?php echo $selected; ?>">
+			<option value="default">None</option>
+			<?php foreach ( (array) $nav_menus as $_nav_menu ) : ?>
+				<option value="<?php echo esc_attr( $_nav_menu->term_id ); ?>" <?php selected($selected, $_nav_menu->term_id); ?>>
+					<?php
+						echo esc_html( $_nav_menu->truncated_name ) ;
 
-		    if ( ! empty( $menu_locations ) && in_array( $_nav_menu->term_id, $menu_locations ) ) {
-		      $locations_assigned_to_this_menu = array();
-		      foreach ( array_keys( $menu_locations, $_nav_menu->term_id ) as $menu_location_key ) {
-		        if ( isset( $locations[ $menu_location_key ] ) ) {
-		          $locations_assigned_to_this_menu[] = $locations[ $menu_location_key ];
-		        }
-		      }
+						if ( ! empty( $menu_locations ) && in_array( $_nav_menu->term_id, $menu_locations ) ) {
+							$locations_assigned_to_this_menu = array();
+							foreach ( array_keys( $menu_locations, $_nav_menu->term_id ) as $menu_location_key ) {
+								if ( isset( $locations[ $menu_location_key ] ) ) {
+									$locations_assigned_to_this_menu[] = $locations[ $menu_location_key ];
+								}
+							}
 
-		      /**
-		       * Filters the number of locations listed per menu in the drop-down select.
-		       *
-		       * @since 3.6.0
-		       *
-		       * @param int $locations Number of menu locations to list. Default 3.
-		       */
-		      $assigned_locations = array_slice( $locations_assigned_to_this_menu, 0, absint( apply_filters( 'wp_nav_locations_listed_per_menu', 3 ) ) );
+							/**
+							* Filters the number of locations listed per menu in the drop-down select.
+							*
+							* @since 3.6.0
+							*
+							* @param int $locations Number of menu locations to list. Default 3.
+							*/
+							$assigned_locations = array_slice( $locations_assigned_to_this_menu, 0, absint( apply_filters( 'wp_nav_locations_listed_per_menu', 3 ) ) );
 
-		      // Adds ellipses following the number of locations defined in $assigned_locations.
-		      if ( ! empty( $assigned_locations ) ) {
-		        printf( ' (%1$s%2$s)',
-		          implode( ', ', $assigned_locations ),
-		          count( $locations_assigned_to_this_menu ) > count( $assigned_locations ) ? ' &hellip;' : ''
-		        );
-		      }
-		    }
-		    ?>
-		  </option>
-		<?php endforeach; ?>
+							// Adds ellipses following the number of locations defined in $assigned_locations.
+							if ( ! empty( $assigned_locations ) ) {
+								printf( ' (%1$s%2$s)',
+									implode( ', ', $assigned_locations ),
+									count( $locations_assigned_to_this_menu ) > count( $assigned_locations ) ? ' &hellip;' : ''
+								);
+							}
+						}
+					?>
+				</option>
+			<?php endforeach; ?>
 		</select>
+		<!-- This element contains the list of registered meta_boxes that wordpress is aware of: -->
+		<p>*** <?php global $wp_meta_boxes; echo print_r($wp_meta_boxes); ?> ***</p>
 		<?php
 	}
 
@@ -191,6 +195,10 @@
 	         
 	    if( isset( $_POST['my_meta_box_select'] ) )
 	        update_post_meta( $post_id, 'my_meta_box_select', esc_attr( $_POST['my_meta_box_select'] ) );
+	    else{
+			// delete data
+			delete_post_meta( $post_id, 'my_meta_box_select' );
+		}
 	    
 	}
 ?>
