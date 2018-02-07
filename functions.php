@@ -131,6 +131,8 @@
 		}
 		?>
 		<p>Sidebar Menu:</p>
+		<!-- Pay attention to this -->
+		<p><?php echo 'Your previous selection is: ' . $values['my_meta_box_select'][0]; ?></p>
 		<select name="my_meta_box_select" id="my_meta_box_select" value="<?php echo $selected; ?>">
 			<option value="default">None</option>
 			<?php foreach ( (array) $nav_menus as $_nav_menu ) : ?>
