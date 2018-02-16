@@ -220,6 +220,8 @@ header {
 #main{
   padding-top: 25px;
   padding-bottom: 25px;
+  /*Prevent a weird effect where there is empty space after the footer*/
+  min-height: 52vh;
 }
 
 
@@ -453,5 +455,8 @@ footer .widget .post-date, footer caption{
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-
+  #main{
+    /*Prevent a weird effect where there is empty space after the footer*/
+    min-height: 72vh;
+  }
 }
