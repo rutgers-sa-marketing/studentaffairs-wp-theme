@@ -224,7 +224,7 @@ header {
 
 
 
-/*SIDEBAR*/
+/*SIDEBARS*/
 .r-sidebar{
   background: #F7F7F7;
   border-top: 2px solid #c5c5c5;
@@ -241,6 +241,11 @@ header {
     width: 100%;
     max-width: 330px;
     font-size: 14px;
+}
+
+.custom-menu-sidebar{
+  background: lightgray;
+  border: dashed 1px green;
 }
 
 

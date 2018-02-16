@@ -97,26 +97,21 @@
 		// $post is already set, and contains an object: the WordPress post
 	    global $post;
 	    $values = get_post_custom( $post->ID );
-	    $text = isset( $values['my_meta_box_text'] ) ? $values['my_meta_box_text'] : '';
-	    $selected = isset( $values['my_meta_box_select'] ) ? esc_attr( $values['my_meta_box_select'][0] ) : 'NO_VALUE_SET';
+	    $selectedMenu = isset( $values['custom_post_sidebar'] ) ? esc_attr( $values['custom_post_sidebar'][0] ) : 'NO_VALUE_SET';
 	    wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
 
 		/* Working Implementation of select box
-			<p><?php echo 'We saved: ' . $values['my_meta_box_select'][0] . ' vs the $selected value of: ' . print_r( esc_attr( $values['my_meta_box_select'][0] ) ); ?></p>
+			<p><?php echo 'We saved: ' . $values['custom_post_sidebar'][0] . ' vs the $selectedMenu value of: ' . print_r( esc_attr( $values['custom_post_sidebar'][0] ) ); ?></p>
 			<p>
-				<label for="my_meta_box_select">Color</label>
-				<select name="my_meta_box_select" id="my_meta_box_select">
-					<option value="Red" <?php selected( $selected, 'Red' ); ?>>Red</option>
-					<option value="Blue" <?php selected( $selected, 'Blue' ); ?>>Blue</option>
-					<option value="Green" <?php selected( $selected, 'Green' ); ?>>Green</option>
+				<label for="custom_post_sidebar">Color</label>
+				<select name="custom_post_sidebar" id="custom_post_sidebar">
+					<option value="Red" <?php selected( $selectedMenu, 'Red' ); ?>>Red</option>
+					<option value="Blue" <?php selected( $selectedMenu, 'Blue' ); ?>>Blue</option>
+					<option value="Green" <?php selected( $selectedMenu, 'Green' ); ?>>Green</option>
 				</select>
 			</p>
 		*/
 		?>
-		<p>
-			<label for="my_meta_box_text">Sample Input Field: </label>
-		    <input type="text" name="my_meta_box_text" id="my_meta_box_text" value="<?php echo $text[0]; ?>" />
-		</p>
 	    <?php
 		/*Took the following code straight from admin/nav-menus.php*/
 		$menus = get_terms('nav_menu');
@@ -134,75 +129,43 @@
 		?>
 		<p>Sidebar Menu:</p>
 		<!-- Pay attention to this -->
-		<p><?php echo 'Your previous selection is: ' . $values['my_meta_box_select'][0]; ?></p>
-		<select name="my_meta_box_select" id="my_meta_box_select" value="<?php echo $selected; ?>">
-			<option value="default">None</option>
+		<!-- p><?php # echo 'Your previous selection is: " ' . print_r($nav_menus) . ' "'; ?></p -->
+		<select name="custom_post_sidebar" id="custom_post_sidebar" value="<?php echo $selectedMenu; ?>">
+			<!-- Careful! Maybe this value needs to be set to -1 ???-->
+			<option value="-1">None</option>
 			<?php foreach ( (array) $nav_menus as $_nav_menu ) : ?>
-				<option value="<?php echo esc_attr( $_nav_menu->term_id ); ?>" <?php selected($selected, $_nav_menu->term_id); ?>>
-					<?php
+				<option value="<?php echo esc_attr( $_nav_menu->term_id ); ?>"
+					<?php  // this line determines whether or not this option should be marked as selected:
+						selected($selectedMenu, $_nav_menu->term_id);
+					?>
+				>
+					<?php // this line pulls out the name of the menu to be displayed inside the option:
 						echo esc_html( $_nav_menu->truncated_name ) ;
-
-						if ( ! empty( $menu_locations ) && in_array( $_nav_menu->term_id, $menu_locations ) ) {
-							$locations_assigned_to_this_menu = array();
-							foreach ( array_keys( $menu_locations, $_nav_menu->term_id ) as $menu_location_key ) {
-								if ( isset( $locations[ $menu_location_key ] ) ) {
-									$locations_assigned_to_this_menu[] = $locations[ $menu_location_key ];
-								}
-							}
-
-							/**
-							* Filters the number of locations listed per menu in the drop-down select.
-							*
-							* @since 3.6.0
-							*
-							* @param int $locations Number of menu locations to list. Default 3.
-							*/
-							$assigned_locations = array_slice( $locations_assigned_to_this_menu, 0, absint( apply_filters( 'wp_nav_locations_listed_per_menu', 3 ) ) );
-
-							// Adds ellipses following the number of locations defined in $assigned_locations.
-							if ( ! empty( $assigned_locations ) ) {
-								printf( ' (%1$s%2$s)',
-									implode( ', ', $assigned_locations ),
-									count( $locations_assigned_to_this_menu ) > count( $assigned_locations ) ? ' &hellip;' : ''
-								);
-							}
-						}
 					?>
 				</option>
 			<?php endforeach; ?>
 		</select>
 		<!-- This element contains the list of registered meta_boxes that wordpress is aware of: -->
-		<!-- p>*** <?php global $wp_meta_boxes; echo print_r($wp_meta_boxes); ?> ***</p -->
+		<!-- p>*** <?php # global $wp_meta_boxes; echo print_r($wp_meta_boxes); ?> ***</p -->
 		<?php
 	}
 
 	function cd_meta_box_save( $post_id ){
-	    //echo("GETTING READY TO SAVE!!!");
-	    // First a few sanity checks to see if we should cancel the save operation:
-	    // Cancel if we're doing an auto save
-	    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	     
-	    // Cancel if our nonce isn't there, or we can't verify it.
-	    if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
-	     
-	    // Cancel if our current user can't edit this post
-	    if( !current_user_can( 'edit_posts' ) ) return;     
-	    // now we can actually save the data
-	    $allowed = array( 
-	        'a' => array( // on allow a tags
-	            'href' => array() // and those anchors can only have href attribute
-	        )
-	    );
-	    // Make sure your data is set before trying to save it
-	    if( isset( $_POST['my_meta_box_text'] ) )
-	        update_post_meta( $post_id, 'my_meta_box_text', wp_kses( $_POST['my_meta_box_text'], $allowed ) );
-	         
-	    if( isset( $_POST['my_meta_box_select'] ) )
-	        update_post_meta( $post_id, 'my_meta_box_select', esc_attr( $_POST['my_meta_box_select'] ) );
-	    else{
-			// delete data
-			delete_post_meta( $post_id, 'my_meta_box_select' );
+		// First a few sanity checks to see if we should cancel the save operation:
+		// Cancel if we're doing an auto save
+		if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+		 
+		// Cancel if our nonce isn't there, or we can't verify it.
+		if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
+		 
+		// Cancel if our current user can't edit this post
+		if( !current_user_can( 'edit_posts' ) ) return;
+
+		if( isset( $_POST['custom_post_sidebar'] ) )
+			update_post_meta( $post_id, 'custom_post_sidebar', esc_attr( $_POST['custom_post_sidebar'] ) );
+		else{
+			// Data was not set, so delete it
+			delete_post_meta( $post_id, 'custom_post_sidebar' );
 		}
-	    
 	}
 ?>
