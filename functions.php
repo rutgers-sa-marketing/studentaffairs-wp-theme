@@ -98,17 +98,19 @@
 	    global $post;
 	    $values = get_post_custom( $post->ID );
 	    $text = isset( $values['my_meta_box_text'] ) ? $values['my_meta_box_text'] : '';
-	    $selected = isset( $values['my_meta_box_select'] ) ? esc_attr( $values['my_meta_box_select'] ) : 'NO_VALUE_SET';
+	    $selected = isset( $values['my_meta_box_select'] ) ? esc_attr( $values['my_meta_box_select'][0] ) : 'NO_VALUE_SET';
 	    wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
 
-		/*
-		<p>
-	        <label for="my_meta_box_select">Color</label>
-	        <select name="my_meta_box_select" id="my_meta_box_select">
-	            <option value="red" <?php selected( $selected, 'red' ); ?>>Red</option>
-	            <option value="blue" <?php selected( $selected, 'blue' ); ?>>Blue</option>
-	        </select>
-	    </p>
+		/* Working Implementation of select box
+			<p><?php echo 'We saved: ' . $values['my_meta_box_select'][0] . ' vs the $selected value of: ' . print_r( esc_attr( $values['my_meta_box_select'][0] ) ); ?></p>
+			<p>
+				<label for="my_meta_box_select">Color</label>
+				<select name="my_meta_box_select" id="my_meta_box_select">
+					<option value="Red" <?php selected( $selected, 'Red' ); ?>>Red</option>
+					<option value="Blue" <?php selected( $selected, 'Blue' ); ?>>Blue</option>
+					<option value="Green" <?php selected( $selected, 'Green' ); ?>>Green</option>
+				</select>
+			</p>
 		*/
 		?>
 		<p>
@@ -170,7 +172,7 @@
 			<?php endforeach; ?>
 		</select>
 		<!-- This element contains the list of registered meta_boxes that wordpress is aware of: -->
-		<p>*** <?php global $wp_meta_boxes; echo print_r($wp_meta_boxes); ?> ***</p>
+		<!-- p>*** <?php global $wp_meta_boxes; echo print_r($wp_meta_boxes); ?> ***</p -->
 		<?php
 	}
 
